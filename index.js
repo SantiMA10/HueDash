@@ -6,7 +6,7 @@ var hue = require("node-hue-api"),
     HueApi = hue.HueApi,
 	state = hue.lightState.create(),
 	target = process.env.TARGET_ID,
-	api = new HueApi(process.env.HOST, process.env.USER);
+	api = new HueApi(process.env.HOST, process.env.HUE_USER);
 
 var dash_button = require('node-dash-button'),
 	dash = dash_button(process.env.DASH_BUTTON, null, null, 'all');
