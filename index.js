@@ -5,8 +5,8 @@ var hue = require("node-hue-api"),
     HueApi = hue.HueApi,
 	state = hue.lightState.create(),
 	target = process.env.TARGET_ID,
-	api = new HueApi(process.env.HOST, process.env.HUE_USER);
-	config = require(__dirname + "/config");
+	config = require(__dirname + "/config"),
+	api = new HueApi(config.host, config.hue_user);
 
 
 
