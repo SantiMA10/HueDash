@@ -1,0 +1,27 @@
+{
+  "name": "hue-dash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiMA10/HueDash.git"
+  },
+  "author": "Santiago M.A. <santiagomartinagra@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SantiMA10/HueDash/issues"
+  },
+  "homepage": "https://github.com/SantiMA10/HueDash#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "node-hue-api": "^2.4.2",
+    "node-dash-button": "^0.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
