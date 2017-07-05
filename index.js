@@ -4,11 +4,8 @@
 var hue = require("node-hue-api"),
     HueApi = hue.HueApi,
 	state = hue.lightState.create(),
-	target = process.env.TARGET_ID,
 	config = require(__dirname + "/config"),
 	api = new HueApi(config.host, config.hue_user);
-
-
 
 var dash_button = require('node-dash-button');
 
@@ -18,10 +15,10 @@ config.configs.forEach(function (config) {
 			api.lightStatus(config.light_id)
 				.then(function (res) {
 					if(res.state.on){
-						api.setLightState(target, state.off());
+						api.setLightState(config.light_id, state.off());
 					}
 					else{
-						api.setLightState(target, state.on());
+						api.setLightState(config.light_id, state.on());
 					}
 				})
 				.done();
