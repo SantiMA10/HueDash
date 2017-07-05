@@ -8,18 +8,22 @@ var hue = require("node-hue-api"),
 	target = process.env.TARGET_ID,
 	api = new HueApi(process.env.HOST, process.env.HUE_USER);
 
-var dash_button = require('node-dash-button'),
-	dash = dash_button(process.env.DASH_BUTTON, null, null, 'all');
+var dash_button = require('node-dash-button');
 
-dash.on('detected', function () {
-	api.lightStatus(target)
-		.then(function (res) {
-			if(res.state.on){
-				api.setLightState(target, state.off());
-			}
-			else{
-				api.setLightState(target, state.on());
-			}
-		})
-		.done();
+var configs = require(__dirname + "/config");
+
+configs.forEach(function (config) {
+	dash_button(config.mac, null, null, 'all')
+		.on('detected', function () {
+			api.lightStatus(config.light_id)
+				.then(function (res) {
+					if(res.state.on){
+						api.setLightState(target, state.off());
+					}
+					else{
+						api.setLightState(target, state.on());
+					}
+				})
+				.done();
+		});
 });
