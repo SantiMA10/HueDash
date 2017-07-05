@@ -1,3 +1,4 @@
+require('dotenv').config();
 var HueApi = require("node-hue-api").HueApi;
 
 var host = process.env.HOST,
