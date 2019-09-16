@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/SantiMA10/HueDash#readme",
   "dependencies": {
-    "node-hue-api": "^2.4.2",
+    "node-hue-api": "^3.1.2",
     "node-dash-button": "^0.6.1"
   },
   "devDependencies": {
