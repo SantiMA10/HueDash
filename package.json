@@ -21,6 +21,6 @@
     "node-dash-button": "^0.6.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^2.0.14"
   }
 }
